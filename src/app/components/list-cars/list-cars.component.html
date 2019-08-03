@@ -1,0 +1,20 @@
+<app-form-cars (lists)="ngOnInit()"></app-form-cars>
+
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let carro of carros">
+                <td>{{carro.id}}</td>
+                <td>{{carro.name}}</td>
+                <td><button class="btn btn-danger" (click)="eliminar(carro.id)">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
