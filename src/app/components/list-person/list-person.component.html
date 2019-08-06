@@ -1,0 +1,32 @@
+<div class="ml-3">
+    <form [formGroup]="myForm" class="mt-5">
+        <div formArrayName="people">
+            <div class="row">
+                <div class="col-md">
+                    <h2>LISTADO DE PERSONAS</h2>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-success" (click)="addPerson()">Add Alias</button>
+                </div>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">CEDULA</th>
+                        <th scope="col">NOMBRE COMPLETO</th>
+                        <th scope="col">EDAD</th>
+                        <th scope="col">ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let address of people.controls; let i=index">
+                        <td><input type="text" formControlName="id"></td>
+                        <td><input type="text" formControlName="name"></td>
+                        <td><input type="text" formControlName="age"></td>
+                        <td><button class="btn btn-danger">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
